@@ -4,8 +4,9 @@
   "description": "Node gyp test",
   "main": "src/index.js",
   "scripts": {
+    "build": "node-gyp configure && node-gyp build",
     "start": "node src/index.js",
-    "postinstall": "node-gyp configure && node-gyp build"
+    "postinstall": "npm run build"
   },
   "keywords": [
     "node-gyp",
@@ -16,6 +17,10 @@
   "author": "Moisés Berenguer",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "node-gyp": "^3.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
   }
 }

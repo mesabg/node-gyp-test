@@ -1,4 +1,10 @@
+const Bluebird = require('bluebird');
 const addon = require('../build/Release/addon');
+global.Promise = Bluebird;
 
-const string = addon.hello();
-console.log(string);
+const response = new Promise(async (resolve, reject) => {
+    addon.hello();
+    resolve();
+});
+
+console.log("After a call");
